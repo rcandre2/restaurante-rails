@@ -1,0 +1,28 @@
+<html>
+
+    <head>
+        <title>Restaurantes - Lista</title>
+    </head>
+
+    <body>
+        <%= link_to 'Novo', { :action => 'edit' } %>
+        <table border="1">
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereco</th>
+                    <th>Especialidade</th>
+                    <th colspan="2">Ações</th>
+                </tr>
+                <% @restaurantes.each do |r| %>
+                    <tr>
+                        <td><%= link_to r.nome, { :action => 'show', :id => r } %></td>
+                        <td><%=h r.endereco %></td>
+                        <td><%=h r.especialidade %></td>
+                        <td><%= link_to 'Alterar', { :action => 'edit', :id => r } %></td>
+                        <td><%= link_to 'Excluir', { :action => 'delete', :id => r } %></td>
+                    </tr>
+                <% end %>
+        </table>
+    </body>
+
+</html>
