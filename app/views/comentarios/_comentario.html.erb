@@ -1,7 +1,7 @@
 
 <p id="comentario-<%= comentario.id %>">
     <%= comentario.conteudo %>
-    <%= link_to_remote '(remover)', :url => comentarios_path(comentario), :method => :delete %>
+    <%= link_to_remote '(remover)', :url => comentario_path(comentario), :method => :delete %>
 </p>
 
 

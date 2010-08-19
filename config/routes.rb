@@ -1,11 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :comentarios
+
   map.resources :qualificacoes
-
-  map.resources :clientes
-
-  map.resources :clientes
-
-  map.resources :clientes
 
   map.resources :clientes
 
