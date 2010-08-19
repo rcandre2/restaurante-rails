@@ -24,7 +24,7 @@ class ComentariosController < ApplicationController
   # GET /comentarios/new
   # GET /comentarios/new.xml
   def new
-    @comentario = Comentario.new
+    @comentario = Comentario.new(params[:comentario])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,6 +47,7 @@ class ComentariosController < ApplicationController
         flash[:notice] = 'Comentario was successfully created.'
         format.html { redirect_to(@comentario) }
         format.xml  { render :xml => @comentario, :status => :created, :location => @comentario }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @comentario.errors, :status => :unprocessable_entity }
